@@ -11,4 +11,8 @@ import scrapy
 class MapDownloadItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    Type_id = scrapy.Field()
+    Zoom = scrapy.Field()
+    X = scrapy.Field()
+    Y = scrapy.Field()
+    Tile = scrapy.Field()
