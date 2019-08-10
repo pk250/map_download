@@ -16,6 +16,7 @@ class GooglemapSpider(scrapy.Spider):
     def parse(self, response):
         url=parse.parse_qs(response.url)
         Tile=response.body
+        # TODO 去水印
         if url['lyrs'][0]=="s@218":
             Type_id = 47626774
         else:
@@ -48,6 +49,7 @@ class GooglemapSpider(scrapy.Spider):
 
     def start_requests(self):
         for zoom in range(20):
+            # TODO 地图选择区域
             lefttop = self.deg2num(50, 70, zoom)
             rightbottom = self.deg2num(12, 145, zoom)
             for x in range(lefttop[0],rightbottom[0]):
